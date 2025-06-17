@@ -1,0 +1,14 @@
+{
+  "name": "ecomad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:backend": "pnpm --filter backend run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": " <ignaciolopezamor@gmail.com>",
+  "license": "ISC",
+  "private": true
+}

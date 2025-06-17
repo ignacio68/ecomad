@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": " <ignaciolopezamor@gmail.com>",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
