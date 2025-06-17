@@ -1,0 +1,14 @@
+!*.ts
+!*.tsx
+!*.json
+!*.js
+!*.vue
+*.yml
+.git/
+.husky/
+.cursor/
+coverage/
+.github/
+hooks/
+node_modules/
+platforms/
