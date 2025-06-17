@@ -1,3 +1,11 @@
 packages:
   - apps/*
   - packages/*
+
+onlyBuiltDependencies:
+  - '@nativescript/core'
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - core-js-pure
+  - electron
+  - utf-8-validate
