@@ -14,7 +14,8 @@
 	},
 	"dependencies": {
 		"@nativescript/core": "~8.9.1",
-		"nativescript-vue": "3.0.1"
+		"nativescript-vue": "3.0.1",
+		"pinia": "^3.0.3"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.29.0",
