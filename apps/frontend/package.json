@@ -4,6 +4,9 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
+		"run:android": "ns run android",
+		"run:android:devtools": "ns run android --env.vueDevtools",
+		"run:ios": "ns run ios --no-hmr",
 		"test": "vitest",
 		"test:ui": "vitest --ui",
 		"test:coverage": "vitest run --coverage",
@@ -13,6 +16,8 @@
 		"format": "prettier ./src  --write ."
 	},
 	"dependencies": {
+		"@nativescript-community/ui-mapbox": "6.2.10",
+		"@nativescript-use/vue": "^0.0.54",
 		"@nativescript/core": "~8.9.1",
 		"@nativescript/localize": "^5.2.0",
 		"nativescript-vue": "3.0.1",
@@ -20,6 +25,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.29.0",
+		"@nativescript/android": "8.9.1",
 		"@nativescript/ios": "8.9.2",
 		"@nativescript/tailwind": "~4.0.3",
 		"@nativescript/types": "~8.9.1",

@@ -16,6 +16,12 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@nativescript-community/ui-mapbox':
+        specifier: ^6.2.31
+        version: 6.2.31
+      '@nativescript-use/vue':
+        specifier: ^0.0.54
+        version: 0.0.54(typescript@5.8.3)
       '@nativescript/core':
         specifier: ~8.9.1
         version: 8.9.2
@@ -32,6 +38,9 @@ importers:
       '@eslint/js':
         specifier: ^9.29.0
         version: 9.29.0
+      '@nativescript/android':
+        specifier: 8.9.1
+        version: 8.9.1
       '@nativescript/ios':
         specifier: 8.9.2
         version: 8.9.2
@@ -679,6 +688,39 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@nativescript-community/perms@2.3.6':
+    resolution: {integrity: sha512-KtAyY2fCjKL19HQ3AslQKH4h+Sao0u4G4AgoF+SkRcAMGxqQd8covjpJ2hN3AFm8TDkqbSm3o0NDMR1dYVr/3A==}
+
+  '@nativescript-community/ui-mapbox@6.2.31':
+    resolution: {integrity: sha512-Uy1x9/MfpI2OVL+5uEXdn43Xo7jaqodkUY5JAM+USNdpkZxqITL7LGUelQCN7a+fZY32asZTdRXN8UsNzvHtaw==}
+
+  '@nativescript-use/nativescript-clipboard@0.0.3':
+    resolution: {integrity: sha512-UlUcVv3QWgCJIPrPBC9hIX0Mgo58K+SQ65w2aKedJIYgMXsa5peSHUb8IoDTUb8DeQZWBWRnrudJF3mIybkfIA==}
+
+  '@nativescript-use/nativescript-intersection-observer@0.0.1':
+    resolution: {integrity: sha512-fiekfJFwu0xh99W2/+Kz8HMLS+e5uH8OMPf5pjk8UHkogxttLV3tD6sh4F6GL74ceoSMyfGl99mJ8BaYvxIvlw==}
+
+  '@nativescript-use/nativescript-keyboard@0.0.1':
+    resolution: {integrity: sha512-uqrCUuYwHxIf3Ktd56qm9bwmPSqz+3FPS2N6kGx6EkPgNOe+HDF34RU5Io9Teqfbkps4PJysZpKmGQkzzX9psw==}
+
+  '@nativescript-use/nativescript-localstorage@0.0.1':
+    resolution: {integrity: sha512-Ueg9YQG78XsW6mh1FyCNH6paRPKYGBXw6T/LvTdzhTwkdU+hL4s1HdW/Z29u4AVf70rnPhMbd7HumlWoQrMbnw==}
+
+  '@nativescript-use/nativescript-media-query@0.0.5':
+    resolution: {integrity: sha512-QhMqYC2K3CZxU9YvA3UeaZUM0S8oNYyq3fa81tQxYjiIeelMT39sND/PShEqUe28k5Uu73HAcZZpbLg8mDiL4w==}
+
+  '@nativescript-use/nativescript-orientation@0.0.3':
+    resolution: {integrity: sha512-uWhF6UOoE8Dzd5GRDuNX7ESXGPbg/e2PNDuKY+TGxpL2JnoCpsRb224GrGo/p4LFm7tbNbf7YXKWRKixhcRgLQ==}
+
+  '@nativescript-use/nativescript-task@0.0.11':
+    resolution: {integrity: sha512-SvOwT5R4yiYtBCj2rWcZfEctVYEyCmVcPA6DK8G5FgV/hdriK397t7X2afjPybVtEZ8i/E/SLAnNvP2zLbqs8g==}
+
+  '@nativescript-use/vue@0.0.54':
+    resolution: {integrity: sha512-D5h+XtX+dAZbsYKjUXGs/Ho2QE3QdSrvfb81ocsdufQLDm0MEyP6rGgOj4vmTGc9aPPtZbOk+XRWziw0AMGXGA==}
+
+  '@nativescript/android@8.9.1':
+    resolution: {integrity: sha512-9xy7Vp77icneQCv0fRVwYfJhuhqFYY3/nPoB7OeG/I78WITPUm+2fNyBj0A6Uu4qJ5/rhwiNAWCaVX0IGBs0oQ==}
+
   '@nativescript/core@8.9.2':
     resolution: {integrity: sha512-lqj3HiCe0sZZgae7wWt2D/Qbn7T/9xdDO4qeeSEqKnb33smUPM0NrRGZVSSTRFY5HDIfSUX2npmiEsUUgl3rhg==}
 
@@ -1085,6 +1127,9 @@ packages:
   '@types/responselike@1.0.3':
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
 
+  '@types/web-bluetooth@0.0.21':
+    resolution: {integrity: sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==}
+
   '@types/yauzl@2.10.3':
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
 
@@ -1241,6 +1286,15 @@ packages:
 
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
+
+  '@vueuse/core@12.8.2':
+    resolution: {integrity: sha512-HbvCmZdzAu3VGi/pWYm5Ut+Kd9mn1ZHnn4L5G8kOQTPs/IwIAmJoBrmYk2ckLArgMXZj0AW3n5CAejLUO+PhdQ==}
+
+  '@vueuse/metadata@12.8.2':
+    resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
+
+  '@vueuse/shared@12.8.2':
+    resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
 
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
@@ -4930,6 +4984,41 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@nativescript-community/perms@2.3.6': {}
+
+  '@nativescript-community/ui-mapbox@6.2.31':
+    dependencies:
+      '@nativescript-community/perms': 2.3.6
+
+  '@nativescript-use/nativescript-clipboard@0.0.3': {}
+
+  '@nativescript-use/nativescript-intersection-observer@0.0.1': {}
+
+  '@nativescript-use/nativescript-keyboard@0.0.1': {}
+
+  '@nativescript-use/nativescript-localstorage@0.0.1': {}
+
+  '@nativescript-use/nativescript-media-query@0.0.5': {}
+
+  '@nativescript-use/nativescript-orientation@0.0.3': {}
+
+  '@nativescript-use/nativescript-task@0.0.11': {}
+
+  '@nativescript-use/vue@0.0.54(typescript@5.8.3)':
+    dependencies:
+      '@nativescript-use/nativescript-clipboard': 0.0.3
+      '@nativescript-use/nativescript-intersection-observer': 0.0.1
+      '@nativescript-use/nativescript-keyboard': 0.0.1
+      '@nativescript-use/nativescript-localstorage': 0.0.1
+      '@nativescript-use/nativescript-media-query': 0.0.5
+      '@nativescript-use/nativescript-orientation': 0.0.3
+      '@nativescript-use/nativescript-task': 0.0.11
+      '@vueuse/core': 12.8.2(typescript@5.8.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@nativescript/android@8.9.1': {}
+
   '@nativescript/core@8.9.2':
     dependencies:
       '@csstools/css-calc': 2.1.4(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)
@@ -5367,6 +5456,8 @@ snapshots:
     dependencies:
       '@types/node': 22.14.1
 
+  '@types/web-bluetooth@0.0.21': {}
+
   '@types/yauzl@2.10.3':
     dependencies:
       '@types/node': 22.14.1
@@ -5680,6 +5771,23 @@ snapshots:
     dependencies:
       js-beautify: 1.15.4
       vue-component-type-helpers: 2.2.10
+
+  '@vueuse/core@12.8.2(typescript@5.8.3)':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 12.8.2
+      '@vueuse/shared': 12.8.2(typescript@5.8.3)
+      vue: 3.5.16(typescript@5.8.3)
+    transitivePeerDependencies:
+      - typescript
+
+  '@vueuse/metadata@12.8.2': {}
+
+  '@vueuse/shared@12.8.2(typescript@5.8.3)':
+    dependencies:
+      vue: 3.5.16(typescript@5.8.3)
+    transitivePeerDependencies:
+      - typescript
 
   '@webassemblyjs/ast@1.14.1':
     dependencies:

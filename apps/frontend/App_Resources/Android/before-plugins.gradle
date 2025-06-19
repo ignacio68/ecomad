@@ -12,4 +12,11 @@ project.ext {
 
   // useKotlin = true
   // kotlinVersion = "1.6.0"
+
+  okHttpVersion = "3.12.10"
+  mapboxVersion = "8.6.6"
+  mapboxTelemetryVersion = "6.1.0"
+  mapboxPluginsVersion = "v9"
+  mapboxAnnotationPluginVersion = "0.9.0"
+  mapboxGesturesVersion = "0.7.0"
 }

@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core'
 
 export default {
-	id: 'org.ignacio68.ecomad',
+	id: 'com.ignaciolopezamor.ecomad',
 	appPath: 'src',
 	appResourcesPath: 'App_Resources',
 	android: {
