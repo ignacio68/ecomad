@@ -41,15 +41,21 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@nativescript-community/perms':
+        specifier: ^3.0.4
+        version: 3.0.4
       '@nativescript-community/ui-mapbox':
-        specifier: 6.2.10
-        version: 6.2.10
+        specifier: ^6.2.31
+        version: 6.2.31
       '@nativescript-use/vue':
         specifier: ^0.0.54
         version: 0.0.54(typescript@5.8.3)
       '@nativescript/core':
         specifier: ~8.9.1
         version: 8.9.2
+      '@nativescript/geolocation':
+        specifier: ^9.0.0
+        version: 9.0.0
       '@nativescript/localize':
         specifier: ^5.2.0
         version: 5.2.0
@@ -785,8 +791,11 @@ packages:
   '@nativescript-community/perms@2.3.6':
     resolution: {integrity: sha512-KtAyY2fCjKL19HQ3AslQKH4h+Sao0u4G4AgoF+SkRcAMGxqQd8covjpJ2hN3AFm8TDkqbSm3o0NDMR1dYVr/3A==}
 
-  '@nativescript-community/ui-mapbox@6.2.10':
-    resolution: {integrity: sha512-e6DyC2LqxQZndu/yPBRA5D98dqdszN1XS6VtezI2KUoz/tIvR/vtvNUEVRi/ND96WXZ/RyKmw3KM/X7TzBfkmw==}
+  '@nativescript-community/perms@3.0.4':
+    resolution: {integrity: sha512-HHRT/IgKCMbcR+AmlU0hJPkqxK8imhO9BdwQ6FWT0hCAx7LdLzCSNQwNmyXyLmklxiCtgkyJ1un36D4C9uRvrQ==}
+
+  '@nativescript-community/ui-mapbox@6.2.31':
+    resolution: {integrity: sha512-Uy1x9/MfpI2OVL+5uEXdn43Xo7jaqodkUY5JAM+USNdpkZxqITL7LGUelQCN7a+fZY32asZTdRXN8UsNzvHtaw==}
 
   '@nativescript-use/nativescript-clipboard@0.0.3':
     resolution: {integrity: sha512-UlUcVv3QWgCJIPrPBC9hIX0Mgo58K+SQ65w2aKedJIYgMXsa5peSHUb8IoDTUb8DeQZWBWRnrudJF3mIybkfIA==}
@@ -817,6 +826,9 @@ packages:
 
   '@nativescript/core@8.9.2':
     resolution: {integrity: sha512-lqj3HiCe0sZZgae7wWt2D/Qbn7T/9xdDO4qeeSEqKnb33smUPM0NrRGZVSSTRFY5HDIfSUX2npmiEsUUgl3rhg==}
+
+  '@nativescript/geolocation@9.0.0':
+    resolution: {integrity: sha512-X8gRSV71YdIgnPv/2aNmxcKfw80e9ZzR8obR7h3EG+LZFnlLYUcfnecYijfz+Ra1ln+5Pp0C3TuyNynkQThsrA==}
 
   '@nativescript/hook@2.0.0':
     resolution: {integrity: sha512-v3Hj3Zpd69sQJfFpDNXonV0EjO1a2OL4l48wlo1Ycsqk4r7RY822d/irFTjt0LllRG0OcdEGgfG6wKb0YgPyHw==}
@@ -5462,7 +5474,9 @@ snapshots:
 
   '@nativescript-community/perms@2.3.6': {}
 
-  '@nativescript-community/ui-mapbox@6.2.10':
+  '@nativescript-community/perms@3.0.4': {}
+
+  '@nativescript-community/ui-mapbox@6.2.31':
     dependencies:
       '@nativescript-community/perms': 2.3.6
 
@@ -5507,6 +5521,10 @@ snapshots:
       css-what: 6.1.0
       emoji-regex: 10.4.0
       tslib: 2.8.1
+
+  '@nativescript/geolocation@9.0.0':
+    dependencies:
+      '@nativescript-community/perms': 2.3.6
 
   '@nativescript/hook@2.0.0':
     dependencies:

@@ -1,59 +1,90 @@
 <script setup lang="ts">
-import { PropType } from 'nativescript-vue'
-import type { ShowOptions, LatLng } from '@nativescript-community/ui-mapbox'
-import { MapboxView } from '@nativescript-community/ui-mapbox'
-import { refView } from '@nativescript-use/vue'
-import { handleMapReady } from '@/services/mapService'
+import { PropType, watchEffect, ref } from 'nativescript-vue'
+import {
+	MapStyle,
+	ShowOptions,
+	LatLng,
+	MapboxView,
+} from '@nativescript-community/ui-mapbox'
+import { applyMapOptions } from '@/services/mapService'
+import { BASE_MAP_CONFIG, MAPBOX_ACCESS_TOKEN } from '@/constants/map'
+import { useLocationPermission } from '@/hooks/useLocationPermission'
+import { DynamicMapOptions } from '@/types/map'
 
 const props = defineProps({
-	options: {
-		type: Object as PropType<ShowOptions>,
+	style: {
+		type: String as PropType<MapStyle>,
 		required: true,
 	},
-	userLocation: {
+	center: {
 		type: Object as PropType<LatLng>,
-		required: false,
+		required: true,
+	},
+	zoomLevel: {
+		type: Number,
+		required: true,
+	},
+	showUserLocation: {
+		type: Boolean,
+		default: false,
 	},
 })
 
-const mapView = refView<MapboxView>()
+const mapView = ref<MapboxView | null>(null)
+const isInitialLoad = ref(true)
+const { hasPermission: hasLocationPermission } = useLocationPermission()
 
-const onMapReady = async (event: { map: MapboxView }) => {
-	console.log('onMapReady', event)
-	if (!mapView.value) {
-		console.error('Map view no está inicializado')
+const onMapReady = (event: { map: MapboxView }) => {
+	mapView.value = event.map
+}
+
+watchEffect(async () => {
+	const map = mapView.value
+	if (!map) {
 		return
 	}
 
 	try {
-		await handleMapReady(mapView.value, props.options.style)
-	} catch (error) {
-		console.error('Error en onMapReady:', error)
-	}
-}
+		const showUserLocation =
+			props.showUserLocation && hasLocationPermission.value
 
-const getInitialCenterCoordinates = () =>
-	props.userLocation ? props.userLocation : props.options.center
+		const dynamicOptions: DynamicMapOptions = {
+			style: props.style,
+			center: props.center,
+			zoomLevel: props.zoomLevel,
+			showUserLocation,
+		}
+		await applyMapOptions({
+			mapView: map,
+			options: dynamicOptions,
+			animated: !isInitialLoad.value,
+		})
+
+		if (isInitialLoad.value) {
+			isInitialLoad.value = false
+		}
+	} catch (error) {
+		console.error('Error al aplicar opciones del mapa en watchEffect:', error)
+	}
+})
+
+// const zoomIn = () => zoomLevel.value++;
+// const zoomOut = () => zoomLevel.value--;
 </script>
 
 <template>
 	<ContentView class="h-full w-full">
 		<Mapbox
-			ref="mapView"
-			:accessToken="props.options.accessToken"
-			:center="getInitialCenterCoordinates()"
-			:zoomLevel="props.options.zoomLevel"
-			:showUserLocation="props.options.showUserLocation"
-			:hideLogo="props.options.hideLogo"
-			:hideAttribution="props.options.hideAttribution"
-			:hideCompass="props.options.hideCompass"
-			:compassPosition="props.options.compassPosition"
-			:disableRotation="props.options.disableRotation"
-			:disableScroll="props.options.disableScroll"
-			:disableZoom="props.options.disableZoom"
-			:disableTilt="props.options.disableTilt"
-			:telemetryEnabled="false"
+			v-if="MAPBOX_ACCESS_TOKEN"
+			:accessToken="MAPBOX_ACCESS_TOKEN"
+			v-bind="BASE_MAP_CONFIG"
 			@mapReady="onMapReady"
+		/>
+		<Label
+			v-else
+			text="Mapbox token is not provided."
+			textWrap="true"
+			class="m-16 text-center"
 		/>
 	</ContentView>
 </template>

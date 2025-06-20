@@ -16,9 +16,11 @@
 		"format": "prettier ./src  --write ."
 	},
 	"dependencies": {
-		"@nativescript-community/ui-mapbox": "6.2.10",
+		"@nativescript-community/perms": "^3.0.4",
+		"@nativescript-community/ui-mapbox": "^6.2.31",
 		"@nativescript-use/vue": "^0.0.54",
 		"@nativescript/core": "~8.9.1",
+		"@nativescript/geolocation": "^9.0.0",
 		"@nativescript/localize": "^5.2.0",
 		"nativescript-vue": "3.0.1",
 		"pinia": "^3.0.3"

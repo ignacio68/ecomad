@@ -1,23 +1,40 @@
 <script lang="ts" setup>
+import { ref } from 'nativescript-vue'
 import Map from '@/components/Map/Map.vue'
-import { DEFAULT_MAP_OPTIONS } from '@/constants/map'
+import { DEFAULT_DYNAMIC_MAP_OPTIONS } from '@/constants/map'
+import type { DynamicMapOptions } from '@/types/map'
+import { MapStyle } from '@nativescript-community/ui-mapbox'
 
-const mapOptions = {
-	...DEFAULT_MAP_OPTIONS,
-	style: 'light', // Usamos el estilo directamente en las opciones
+// Usamos el tipo importado
+const mapOptions = ref<DynamicMapOptions>({ ...DEFAULT_DYNAMIC_MAP_OPTIONS })
+
+function toggleMapStyle() {
+	const newStyle =
+		mapOptions.value.style === MapStyle.LIGHT ? MapStyle.DARK : MapStyle.LIGHT
+	console.log(`Cambiando estilo a: ${newStyle}`)
+	mapOptions.value.style = newStyle
 }
 </script>
 
 <template>
 	<Frame>
-		<Page>
-			<ActionBar>
-				<Label text="EcoMAD" class="text-lg font-bold" />
-			</ActionBar>
+		<Page actionBarHidden="true" backgroundUnderStatusBar="true">
+			<GridLayout rows="*, auto">
+				<Map
+					row="0"
+					:style="mapOptions.style"
+					:center="mapOptions.center"
+					:zoomLevel="mapOptions.zoomLevel"
+					:showUserLocation="mapOptions.showUserLocation"
+				/>
 
-			<StackLayout class="h-full w-full">
-				<Map :options="mapOptions" />
-			</StackLayout>
+				<Button
+					row="1"
+					text="Cambiar Estilo"
+					@tap="toggleMapStyle"
+					class="m-16"
+				/>
+			</GridLayout>
 		</Page>
 	</Frame>
 </template>

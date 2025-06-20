@@ -1,11 +1,21 @@
-export interface MapOptions {
-	accessToken?: string
-	style?: string
-	center?: [number, number]
-	zoom?: number
-	showUserLocation?: boolean
-	[key: string]: any // permite argumentos extra específicos de cada proveedor
-	// Puedes añadir más campos comunes según tus necesidades
+import type { LatLng, ShowOptions } from '@nativescript-community/ui-mapbox'
+import { MapStyle } from '@nativescript-community/ui-mapbox'
+
+/**
+ * Define las opciones que un componente padre puede pasar dinámicamente al mapa.
+ */
+export interface DynamicMapOptions {
+	style: MapStyle
+	center: LatLng
+	zoomLevel: number
+	showUserLocation: boolean
 }
 
-export type MapStyle = string
+/**
+ * Define la forma de la configuración estática y por defecto del mapa,
+ * omitiendo las propiedades que se gestionan de forma dinámica o separada.
+ */
+export type BaseMapOptions = Omit<
+	ShowOptions,
+	keyof DynamicMapOptions | 'accessToken'
+>

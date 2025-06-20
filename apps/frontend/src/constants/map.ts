@@ -1,12 +1,16 @@
-import type { ShowOptions } from '@nativescript-community/ui-mapbox'
 import { ControlPosition, MapStyle } from '@nativescript-community/ui-mapbox'
+import type { DynamicMapOptions, BaseMapOptions } from '@/types/map'
 
-export const DEFAULT_MAP_OPTIONS: ShowOptions = {
-	accessToken: process.env.MAPBOX_SECRET_TOKEN as string,
-	style: 'light', // Estilo por defecto
+export const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_SECRET_TOKEN as string
+
+export const DEFAULT_DYNAMIC_MAP_OPTIONS: DynamicMapOptions = {
+	style: MapStyle.LIGHT,
 	center: { lat: 40.4165, lng: -3.70256 }, // Madrid
-	zoomLevel: 8,
+	zoomLevel: 12,
 	showUserLocation: false,
+}
+
+export const BASE_MAP_CONFIG: BaseMapOptions = {
 	hideLogo: true,
 	hideAttribution: true,
 	hideCompass: false,
@@ -19,15 +23,3 @@ export const DEFAULT_MAP_OPTIONS: ShowOptions = {
 		enabled: false,
 	},
 }
-
-export const MAP_STYLES = {
-	LIGHT: 'mapbox://styles/mapbox/light-v10',
-	DARK: 'mapbox://styles/mapbox/dark-v10',
-	STREETS: 'mapbox://styles/mapbox/streets-v11',
-	OUTDOORS: 'mapbox://styles/mapbox/outdoors-v11',
-	SATELLITE: 'mapbox://styles/mapbox/satellite-v9',
-	SATELLITE_STREETS: 'mapbox://styles/mapbox/satellite-streets-v11',
-}
-
-export const CUSTOM_MAP_STYLE =
-	'mapbox://styles/ignacio68/ckay3bxbr11qt1hquzxx1ohot'
